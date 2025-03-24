@@ -1,0 +1,28 @@
+{
+  "name": "unify-aesthetics-app",
+  "version": "1.0.0",
+  "description": "Patient management system for Unify Aesthetics",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "npm run start --workspace=client",
+    "start:server": "npm run start --workspace=server",
+    "build": "npm run build --workspace=client && npm run build --workspace=server",
+    "test": "npm run test --workspace=client && npm run test --workspace=server",
+    "lint": "npm run lint --workspace=client && npm run lint --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "prettier": "^3.0.0",
+    "eslint": "^8.44.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Unify Aesthetics",
+  "license": "UNLICENSED"
+}
